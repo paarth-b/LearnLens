@@ -8,6 +8,18 @@
 
   }
 
+
+  #pdfView {
+    height: 700px;
+    position: relative;
+    /* display: flex; */
+    justify-content: center;
+    width: 100%;
+    padding-top: 0px;
+    zoom: 100%;
+    padding-left: 400px;
+  }
+
   #typingAnimation {
     height: 100px;
     position: relative;
@@ -15,7 +27,6 @@
     justify-content: center;
     width: 100%;
     padding-top: 0px;
-
   }
 
 

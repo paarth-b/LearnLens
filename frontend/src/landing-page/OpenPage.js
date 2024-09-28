@@ -1,25 +1,26 @@
 import React, { useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
-// import ChatInput from './ChatInput';
 import FileInput from './FileInput';
 import "./open-page-style.css";
-// import ReactPlayer from 'react-player';
+import ReactPlayer from 'react-player';
 
 
-export default function OpenPage() {
-  const [message, setMessage] = useState('');
-  const [videoUrl, setVideoUrl] = useState(''); 
-  const handleSend = () => {
-    if (message.trim()) {
-      console.log('Message sent:', message);
-      setVideoUrl(message);
-      setMessage('');  // Clear input after sending
+
+export default function OpenPage( { getFileForNav } ) {
+  const [upFile, setUpFile] = useState(''); 
+  const [fileURL, setFileURL] = useState(null);
+
+  const handleFile = (uFile) => {
+    setUpFile(uFile);
+    if (uFile) {
+      setFileURL(URL.createObjectURL(uFile)); // Create an object URL for the file
     }
+    getFileForNav(uFile);
   };
   
   return (
     <div className="outer-wrapper">
-      <div id="typingAnimation">
+      <div id="typingAnimation" class="center-component">
         <TypeAnimation
           sequence={[
             // Same substring at the start will only be typed once, initially
@@ -35,8 +36,29 @@ export default function OpenPage() {
           repeat={Infinity}
         />
       </div>
-      <div id="fileUpload">
-        <FileInput />
+      <div id="fileUpload" class="center-component">
+        <FileInput setUploadFile={handleFile} />
+      </div>
+      <div id="pdfView" class="center-component">
+      {/* <div id={`pdf-viewer ${upFile ? 'pdf-viewer-visible' : 'pdf-viewer-hidden'}`} class="center-component"> */}
+
+        {/* {upFile && (
+            <div>
+              <p>File Name: {upFile.name}</p>
+              {fileURL && (
+                <div className="pdf-viewer">
+                  <iframe
+                    src={fileURL}
+                    title="PDF Viewer"
+                    width="50%"
+                    height="700px"
+                  />
+                </div>
+              )}
+            </div>
+          )} */}
+          <ReactPlayer controls url={fileURL} />
+        
       </div>
     </div>
   );

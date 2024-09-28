@@ -3,22 +3,21 @@ import { FileUploader } from "react-drag-drop-files";
 
 import "./file-input-style.css";
 
-const fileTypes = ["PDF"];
+const fileTypes = ["PDF", "MP4"];
 
-export default function FileInput() {
+export default function FileInput( { setUploadFile } ) {
     const [file, setFile] = useState(null);
     const handleChange = (file) => {
       setFile(file);
+      setUploadFile(file);
     };
     return (
         <div>
             <FileUploader
-            multiple={true}
             handleChange={handleChange}
             name="file"
             types={fileTypes}
             />
-            {/* <p>{file ? `File name: ${file[0].name}` : "no files uploaded yet"}</p> */}
         </div>
     );
   }
