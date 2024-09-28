@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./App.css";
 
-import OpenPage from "./OpenPage";
+import OpenPage from "./landing-page/OpenPage";
 
 function App() {
   
