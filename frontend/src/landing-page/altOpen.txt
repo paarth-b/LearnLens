@@ -19,6 +19,9 @@ export default function OpenPage() {
   
   return (
     <div className="outer-wrapper">
+      {/* <div className="App">
+        <ReactPlayer controls url={videoUrl} />
+  </div>*/ }
       <div id="typingAnimation">
         <TypeAnimation
           sequence={[
@@ -35,9 +38,19 @@ export default function OpenPage() {
           repeat={Infinity}
         />
       </div>
+
       <div id="fileUpload">
         <FileInput />
       </div>
+
+
+      {/* <ChatInput
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        onKeyDown = {(e) => setMessage(e.target.value)}
+        onSend={handleSend}
+      /> */}
+      
     </div>
   );
 }
