@@ -1,0 +1,13 @@
+/* .App {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 30px;
+} */
+
+
+/* Dark Gray Hex: #303030 */
+body {
+  color: #ffffff;
+  background-color: #252525;
+}
