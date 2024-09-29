@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+'use client'
+
+import { useFile } from '../app/FileContext';
 import ReactPlayer from 'react-player';
 
-
-
 export default function VideoPage() {
-    return (
-        <h1>Page 2</h1>
-    );
+  const { file } = useFile();
+  
+  // Use the file here
+  
+  return (
+    <p>{file}</p>
+  );
 }
-
