@@ -15,6 +15,7 @@ export default function OpenPage( { getFileForNav } ) {
     if (uFile) {
       setFileURL(URL.createObjectURL(uFile)); // Create an object URL for the file
       getFileForNav(uFile);
+      // getFileURLForNav(URL.createObjectURL(uFile))
     }
     
   };
