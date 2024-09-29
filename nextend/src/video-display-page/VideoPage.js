@@ -9,6 +9,6 @@ export default function VideoPage() {
   // Use the file here
   
   return (
-    <p>{file}</p>
+    <p>Page 2</p>
   );
 }

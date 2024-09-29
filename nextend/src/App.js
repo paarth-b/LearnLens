@@ -12,9 +12,10 @@ function App() {
 
   function handleFileChange(upfile) {
     setFile(upfile);
-    router.push('/video');
+    console.log(upfile.name)
+    router.push('/video'); 
   }
-  
+   
   return (
     <div>
       <OpenPage getFileForNav={handleFileChange} />

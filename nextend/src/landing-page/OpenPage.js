@@ -3,6 +3,7 @@ import { TypeAnimation } from 'react-type-animation';
 import FileInput from '../components/FileInput';
 import "./open-page-style.css";
 import ReactPlayer from 'react-player';
+import { UploadForm } from './(form)/form';
 
 
 
@@ -39,7 +40,8 @@ export default function OpenPage( { getFileForNav } ) {
         />
       </div>
       <div id="fileUpload" class="center-component">
-        <FileInput setUploadFile={handleFile} />
+        {/* <FileInput setUploadFile={handleFile} /> */}
+        <UploadForm />
       </div>
     </div>
   );
