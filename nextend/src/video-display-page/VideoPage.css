@@ -13,9 +13,9 @@ body {
 .container {
   display: flex;
   width: 90%;
-  max-width: 1400px;
+  max-width: 2400px;
   margin: 0 auto;
-  padding-top: 20px;
+  padding-top: 200px;
 }
 
 /* Video player styling */
@@ -23,7 +23,7 @@ body {
   flex: 2;
   margin-right: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
 }
 
@@ -35,12 +35,12 @@ body {
   border-radius: 16px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(43, 73, 180, 0.1);
   margin-right: 20px;
 }
 
 .chat-header {
-  background-color: #343a40;
+  background-color: #55a3f0;
   color: white;
   padding: 15px;
   border-radius: 12px;
@@ -141,7 +141,7 @@ body {
 }
 
 .quiz-header {
-  background-color: #28a745;
+  background-color: #287da7;
   color: white;
   padding: 15px;
   border-radius: 12px;
@@ -160,10 +160,11 @@ body {
 .quiz-options {
   display: flex;
   flex-direction: column;
+  color: black;
 }
 
 .quiz-option {
-  background-color: #e9ecef;
+  background-color: #317ac4;
   padding: 10px 15px;
   margin-bottom: 10px;
   border: none;

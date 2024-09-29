@@ -20,15 +20,34 @@ export default function VideoPage() {
     options: [],
   });
 
+
   // Function to simulate AI response with a delay
-  const sendToModel = async (userMessage) => {
-    // Simulate AI response with a delay (this should be your API call to your AI model)
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(`AI Response to "${userMessage}"`);
-      }, 1000); // Simulate 1s delay for AI response
-    });
-  };
+const sendToModel = async (userMessage) => {
+  // Define an array of possible responses
+  const aiResponses = [
+    `AI: Here's some insight on "${userMessage}".`,
+    `AI: That's an interesting question about "${userMessage}". Let me help.`,
+    `AI: I have a few thoughts on "${userMessage}". Let's dive in.`,
+  ];
+
+  // Simulate AI response with a delay (this should be your API call to your AI model)
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      // Randomly select one of the responses
+      const randomIndex = Math.floor(Math.random() * aiResponses.length);
+      resolve(aiResponses[randomIndex]);
+    }, 1000); // Simulate 1s delay for AI response
+  });
+};
+
+  // const sendToModel = async (userMessage) => {
+  //   // Simulate AI response with a delay (this should be your API call to your AI model)
+  //   return new Promise((resolve) => {
+  //     setTimeout(() => {
+  //       resolve(`AI Response to "${userMessage}"`);
+  //     }, 1000); // Simulate 1s delay for AI response
+  //   });
+  // };
 
   // Function to simulate getting a quiz from the AI
   const getQuizFromAI = async () => {
@@ -36,8 +55,8 @@ export default function VideoPage() {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve({
-          question: "What is the capital of France?",
-          options: ["Berlin", "Madrid", "Paris", "Rome", "Lisbon"],
+          question: "What Data Structure is used for Least Recently Used cache?",
+          options: ["Hashmap", "LinkedList", "Hashset", "Insertion Sort", "Python"],
         });
       }, 1000);
     });
@@ -71,7 +90,7 @@ export default function VideoPage() {
     <div className="container">
       {/* Video Player Section */}
       <div className="video-player">
-        <ReactPlayer controls url="https://www.youtube.com/watch?v=HqPJF2L5h9U" />
+        <ReactPlayer width="90%" height="50%"  controls url="https://www.youtube.com/watch?v=HqPJF2L5h9U" />
       </div>
 
       {/* Chatbox Section */}
