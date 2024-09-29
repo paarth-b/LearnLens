@@ -71,7 +71,7 @@ export default function VideoPage() {
     <div className="container">
       {/* Video Player Section */}
       <div className="video-player">
-        <ReactPlayer controls url="https://www.youtube.com/watch?v=_0MXhG1shEc" />
+        <ReactPlayer controls url="https://www.youtube.com/watch?v=HqPJF2L5h9U" />
       </div>
 
       {/* Chatbox Section */}

@@ -1,51 +1,227 @@
-/* Contains both the typing and file upload sections - padding to center items vertically */
-  .outer-wrapper {
-    height: 200px;
-    position: relative;
-    justify-content: center;
-    width: 100%;
-    padding-top: 250px;
+/* Outer wrapper to contain typing animation and file upload sections - centers items vertically */
+.outer-wrapper {
+  height: 400px; /* Increase the height to give more space */
+  position: relative;
+  justify-content: center;
+  width: 100%;
+  padding-top: 300px; /* Adjust the top padding */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+}
 
-  }
-
-
-  #pdfView {
-    height: 700px;
-    position: relative;
-    /* display: flex; */
-    justify-content: center;
-    width: 100%;
-    padding-top: 0px;
-    zoom: 100%;
-    padding-left: 400px;
-  }
-
-  #typingAnimation {
-    height: 100px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding-top: 0px;
-  }
-
-
-  
-#fileUpload {
+/* Typing animation section styling */
+#typingAnimation {
   height: 100px;
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  padding-top: 0px;
+  font-size: 4rem; /* Large text for the typing animation */
+  color: white;
+  text-align: center;
+  margin-bottom: 30px; /* Space between text and the button */
 }
 
-  .fileUpload {
-    display: flex;
+/* File upload section styling */
+#fileUpload {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Input field for uploading files */
+input[type="file"] {
+  font-size: 1.5rem; /* Large font for better readability */
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2); /* Translucent white background */
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Semi-transparent white border */
+  padding: 15px 30px; /* Larger padding to make the button bigger */
+  border-radius: 10px; /* Rounded corners for a smooth look */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Arial', sans-serif; /* Clean, modern font */
+  display: inline-block;
+}
+
+/* Hover effect for file input */
+input[type="file"]:hover {
+  background-color: rgba(255, 255, 255, 0.5); /* Change background on hover */
+  color: rgba(213, 213, 213, 0.573); /* Change text color on hover */
+  border: 2px solid rgba(255, 255, 255, 0.8); /* More solid border on hover */
+}
+
+/* Optional: Remove the default file input text for a cleaner look */
+input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+input[type="file"]::before {
+  content: 'Choose File'; /* Custom label for the button */
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  color: rgba(173, 173, 173, 0.901);
+  font-size: 1.5rem;
+  padding: 15px 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for the custom label */
+input[type="file"]:hover::before {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgba(248, 248, 248, 0.396);
+}
+
+
+/* Flex container for file upload */
+.fileUpload {
+  display: flex;
+}
+
+/* Dark Gray Hex: #303030 */
+body {
+  color: #ffffff;
+  background: linear-gradient(45deg, #000000, #3f3a3d, #020234, #4cbaed); /* Gradient background */
+  background-size: 400% 400%; /* Larger background to make animation smoother */
+  animation: moveGradient 10s ease infinite; /* Infinite animation to move gradient */
+  font-family: Arial, sans-serif; /* Default font for the page */
+}
+
+/* Keyframes for moving gradient background */
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  /* Dark Gray Hex: #303030 */
-  body {
-    color: #ffffff;
-    background-color: #252525;
+  50% {
+    background-position: 100% 50%;
   }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Input field for uploading files */
+input[type="file"] {
+  padding: 10px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #333;
+  border: 1px solid #555;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for file input */
+input[type="file"]:hover {
+  background-color: #444;
+}
+
+/* Button styles */
+button {
+  padding: 20px 60px;
+  background-color: #f0e9e96e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 2rem;
+  cursor: pointer;
+  font-family: "Serif";;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 60%;
+
+  /* Add margin to move the button lower */
+  margin-top: 100px; /* Adjust this value to control how low it goes */
+}
+
+
+/* Hover effect for buttons */
+button:hover {
+  background-color: #f36127;
+  opacity: 80%;
+}
+
+/* Typing animation text styling */
+#typingAnimation {
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+}
+
+/* Centering text inside typing animation */
+#typingAnimation span {
+  display: inline-block;
+}
+
+/* Chatbox container (if applicable in future use) */
+.chat-box {
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Input field inside chatbox */
+.chat-box input {
+  width: 80%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #444;
+  margin-right: 10px;
+  background-color: #333;
+  color: #fff;
+  outline: none;
+}
+
+/* Button inside chatbox */
+.chat-box button {
+  padding: 12px 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for chatbox button */
+.chat-box button:hover {
+  background-color: #218838;
+}
+
+/* Message bubbles */
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  display: inline-block;
+}
+
+/* Bot message style */
+.message-bot {
+  background-color: #444;
+  color: white;
+  max-width: 70%;
+  word-wrap: break-word;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* User message style */
+.message-user {
+  background-color: #007bff;
+  color: white;
+  margin-left: auto;
+  max-width: 70%;
+  word-wrap: break-word;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+

@@ -35,7 +35,7 @@ export default function OpenPage( { getFileForNav } ) {
             5000,
           ]}
           speed={35}
-          style={{ fontSize: '2em' }}
+          style={{ fontSize: '6em' }}
           repeat={Infinity}
         />
       </div>
