@@ -14,7 +14,13 @@ export default function VideoPage() {
   ]);
   const [inputValue, setInputValue] = useState('');
 
-  // Function to simulate sending message to AI model (you'll replace this with your model's API)
+  // Quiz state to store questions and answers
+  const [quiz, setQuiz] = useState({
+    question: "Loading question...",
+    options: [],
+  });
+
+  // Function to simulate AI response with a delay
   const sendToModel = async (userMessage) => {
     // Simulate AI response with a delay (this should be your API call to your AI model)
     return new Promise((resolve) => {
@@ -23,6 +29,28 @@ export default function VideoPage() {
       }, 1000); // Simulate 1s delay for AI response
     });
   };
+
+  // Function to simulate getting a quiz from the AI
+  const getQuizFromAI = async () => {
+    // Simulate a quiz response with 5 options (replace with real AI logic)
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          question: "What is the capital of France?",
+          options: ["Berlin", "Madrid", "Paris", "Rome", "Lisbon"],
+        });
+      }, 1000);
+    });
+  };
+
+  // Fetch a quiz question when the page loads
+  useEffect(() => {
+    const fetchQuiz = async () => {
+      const quizData = await getQuizFromAI();
+      setQuiz(quizData);
+    };
+    fetchQuiz();
+  }, []);
 
   // Handle sending message when user submits
   const handleSendMessage = async () => {
@@ -68,6 +96,17 @@ export default function VideoPage() {
             onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()} // Allow sending by pressing "Enter"
           />
           <button onClick={handleSendMessage}>Send</button>
+        </div>
+      </div>
+
+      {/* Quiz Section */}
+      <div className="quiz-box">
+        <div className="quiz-header">Quiz Time!</div>
+        <div className="quiz-question">{quiz.question}</div>
+        <div className="quiz-options">
+          {quiz.options.map((option, index) => (
+            <button key={index} className="quiz-option">{option}</button>
+          ))}
         </div>
       </div>
     </div>
